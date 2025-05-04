@@ -1,0 +1,138 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0a0a0a;
+  color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#chat-container {
+  width: 400px;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #5a0ee2;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: #5a0ee2;
+  padding: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+#logo {
+  height: 30px;
+}
+
+#live-status {
+  background-color: #222;
+  padding: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+#messages {
+  list-style-type: none;
+  padding: 10px;
+  margin: 0;
+  overflow-y: auto;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+#messages li {
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  background: #2a2a2a;
+  border-radius: 8px;
+  word-wrap: break-word;
+}
+
+form {
+  display: flex;
+  padding: 10px;
+  background: #111;
+}
+
+#input {
+  flex-grow: 1;
+  padding: 10px;
+  background: #333;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+}
+
+#input:focus {
+  outline: none;
+}
+
+button {
+  background: #5a0ee2;
+  border: none;
+  padding: 10px 15px;
+  margin-left: 8px;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #7b2dfc;
+}
+
+#extras {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background: #181818;
+}
+
+#extras button,
+#extras a {
+  margin-bottom: 8px;
+  text-align: center;
+  text-decoration: none;
+  background-color: #333;
+  border: 1px solid #5a0ee2;
+  color: #fff;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+#extras button:hover {
+  background-color: #5a0ee2;
+}
+
+#leaderboard {
+  background: #222;
+  padding: 10px;
+  font-size: 14px;
+}
+
+#leaderboard h2 {
+  margin-top: 0;
+  font-size: 16px;
+}
+
+#ranking {
+  list-style: decimal inside;
+  padding-left: 0;
+  margin: 0;
+}
+
+#ranking li {
+  margin-bottom: 5px;
+}

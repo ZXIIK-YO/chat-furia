@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Chat FURIA</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div id="chat-container">
+    <header>
+      <img src="/logo-furia.png" alt="FURIA" id="logo">
+      Chat Oficial da FURIA
+    </header>
+
+    <div id="live-status">
+      🎮 FURIA vs NAVI - Em andamento (13x9) |
+      <span id="online-count">👥 0 online</span>
+    </div>
+
+    <ul id="messages"></ul>
+
+    <form id="form" action="">
+      <input id="input" autocomplete="off" placeholder="Digite sua mensagem..." />
+      <button>Enviar</button>
+    </form>
+
+    <div id="extras">
+      <button onclick="enviarInfo('placar')">📣 Ver Placar</button>
+      <button onclick="enviarInfo('escalação')">👥 Escalação</button>
+      <button onclick="enviarInfo('proximo')">📅 Próximo Jogo</button>
+      <button onclick="enviarInfo('estatisticas')">📊 Estatísticas</button>
+      <a href="https://wa.me/5511993404466" target="_blank">📱 Contato Inteligente (Beta)</a>
+    </div>
+
+    <div id="leaderboard">
+      <h2>🔥 Top 3 do Chat</h2>
+      <ul id="ranking">
+        <li>torcedor_furia01 (12 msgs)</li>
+        <li>cszeiro22 (9 msgs)</li>
+        <li>furiosaa (6 msgs)</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/script.js"></script>
+</body>
+</html>
