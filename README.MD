@@ -8,14 +8,14 @@ Este README detalha a arquitetura, as escolhas de tecnologias, o passo-a-passo d
 2. [Arquitetura e Fluxo de Dados](#-arquitetura-e-fluxo-de-dados)  
 3. [Tecnologias e Justificativas](#-tecnologias-e-justificativas)  
 4. [Configuração e Instalação](#-configuração-e-instalação)  
-5. [Detalhes do Frontend](#-detalhes-do-frontend-scriptjs)  
-6. [Detalhes do Backend](#-detalhes-do-backend-serversjs)  
+5. [Detalhes do Frontend](#-detalhes-do-frontend)  
+6. [Detalhes do Backend](#-detalhes-do-backend)  
 7. [Comandos de Chat](#-comandos-de-chat)  
 8. [Possíveis Extensões Futuras](#-possíveis-extensões-futuras)   
 
 ---
 
-## 🔥 Visão Geral {#-visão-geral}
+## 🔥 Visão Geral
 
 Chat em tempo real para fãs do time de CS:GO **FURIA**. Permite:  
 - Troca de mensagens bidirecionais (usuários ↔ servidor)  
@@ -26,7 +26,7 @@ Chat em tempo real para fãs do time de CS:GO **FURIA**. Permite:
 
 ---
 
-## 🏗 Arquitetura e Fluxo de Dados {#-arquitetura-e-fluxo-de-dados}
+## 🏗 Arquitetura e Fluxo de Dados
 
 1. **Cliente (navegador)**  
   - Conecta-se ao servidor via WebSocket (Socket.IO).  
@@ -46,7 +46,7 @@ Chat em tempo real para fãs do time de CS:GO **FURIA**. Permite:
 
 ---
 
-## 🛠 Tecnologias e Justificativas {#-tecnologias-e-justificativas}
+## 🛠 Tecnologias e Justificativas
 
 | Tecnologia        | Uso                                                 | Por quê?                                     |
 |-------------------|-----------------------------------------------------|----------------------------------------------|
@@ -59,7 +59,7 @@ Chat em tempo real para fãs do time de CS:GO **FURIA**. Permite:
 
 ---
 
-## ⚙️ Configuração e Instalação {#-configuração-e-instalação}
+## ⚙️ Configuração e Instalação
 
 1. **Pré-requisitos**  
   - Node.js ≥ v14  
@@ -80,14 +80,19 @@ Chat em tempo real para fãs do time de CS:GO **FURIA**. Permite:
   ```bash
   node server.js
   ```
-  O console exibirá: `Servidor rodando em http://localhost:3000`.
+  O console exibirá: `Servidor rodando em http://localhost:3000`.  
+  Se aparecer uma mensagem de erro sobre porta já em uso, tente:  
+  ```bash
+  npx kill-port 3000
+  ```  
+  Ou altere a porta no código do servidor.
 
 5. **Acessar no navegador**  
   Abra `http://localhost:3000` no navegador.
 
 ---
 
-## 🖥 Detalhes do Frontend (`script.js`) {#-detalhes-do-frontend-scriptjs}
+## 🖥 Detalhes do Frontend
 
 ### Geração de nome
 Cada cliente recebe um nome único fixo por sessão (`gerarNomeTorcedorAleatorio()`).
@@ -108,7 +113,7 @@ Cada cliente recebe um nome único fixo por sessão (`gerarNomeTorcedorAleatorio
 
 ---
 
-## 🖥 Detalhes do Backend (`server.js`) {#-detalhes-do-backend-serversjs}
+## 🖥 Detalhes do Backend
 
 ### Express Static
 `app.use(express.static(__dirname))` para servir `index.html`, `.css`, `.js` e imagem.
@@ -123,7 +128,7 @@ Cada cliente recebe um nome único fixo por sessão (`gerarNomeTorcedorAleatorio
 
 ---
 
-## 💬 Comandos de Chat {#-comandos-de-chat}
+## 💬 Comandos de Chat
 
 | Comando       | Descrição                                      |
 |---------------|------------------------------------------------|
@@ -135,7 +140,7 @@ Cada cliente recebe um nome único fixo por sessão (`gerarNomeTorcedorAleatorio
 
 ---
 
-## 🔭 Possíveis Extensões Futuras {#-possíveis-extensões-futuras}
+## 🔭 Possíveis Extensões Futuras
 
 - Persistência com MongoDB para histórico e leaderboard real.  
 - Autenticação de usuários (OAuth com Twitch/Discord).  
